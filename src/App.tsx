@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import Form from "./components/Form";
 
+export type FakeData = {
+  title: string;
+  description: string;
+};
 function App() {
+  
+  const fakeData: FakeData = {
+    title: "Poop",
+    description: "<b>Boop</b>",
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Form data={fakeData} />
     </div>
   );
 }
